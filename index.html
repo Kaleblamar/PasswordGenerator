@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="password generator" />
+    <meta name="author" content="James Kaleb Lamar" />
+    <script
+      src="https://kit.fontawesome.com/5c1c4101a5.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="style.css" />
+    <script defer src="./script.js"></script>
+    <title>Password Generator</title>
+  </head>
+  <body>
+    <!-- ========================================= -->
+    <!-- Main container  -->
+    <!-- ========================================= -->
+    <div id="container">
+      <!-- ===================================== -->
+      <!--  heading-->
+      <!-- ===================================== -->
+      <h2>Password Generator</h2>
+      <!-- ======================================= -->
+      <!-- result window -->
+      <!-- ======================================= -->
+      <section id="resultContainer">
+        <span id="result">ejrcjehfbvebffhbrbfrbcfue</span>
+        <button class="btn" id="clipboard">
+          <i class="fa-solid fa-clipboard"></i>
+        </button>
+      </section>
+      <!-- ==================================== -->
+      <!-- range input -->
+      <!-- ==================================== -->
+      <div class="option">
+        <label id="lengthLabel" for="length">Length:</label>
+        <div class="lengthBox">
+          4 <input type="range" id="length" value="10" min="4" max="20" />20
+        </div>
+      </div>
+      <!-- =================================== -->
+      <!-- settings inputs -->
+      <!-- =================================== -->
+      <section id="options">
+        <p>Settings:</p>
+        <div class="setting">
+          <label for="lowercase">Lowercase letters</label>
+          <input type="checkbox" id="lowercase" checked />
+        </div>
+        <div class="setting">
+          <label for="uppercase">Uppercase letters</label>
+          <input type="checkbox" id="uppercase" checked />
+        </div>
+        <div class="setting">
+          <label for="numbers">Numbers</label>
+          <input type="checkbox" id="numbers" checked />
+        </div>
+        <div class="setting">
+          <label for="Symbols">Symbols</label>
+          <input type="checkbox" id="symbols" checked />
+        </div>
+      </section>
+      <!-- ================================= -->
+      <!-- generator button -->
+      <!-- ================================= -->
+      <button id="generate" class="btn">Generate Password</button>
+    </div>
+  </body>
+</html>
