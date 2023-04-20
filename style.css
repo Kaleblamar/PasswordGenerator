@@ -118,6 +118,10 @@ button:active {
 #lengthLabel {
   display: block;
 }
+#rangeOutput {
+  color: red;
+  font-weight: 700;
+}
 /* ================================= */
 /* input settings */
 /* ================================= */
@@ -133,7 +137,6 @@ button:active {
 /* toggles switch */
 /* =================================== */
 input[type="checkbox"] {
-  /* opacity: 0; */
   position: relative;
   margin-right: 25px;
   width: 0;
