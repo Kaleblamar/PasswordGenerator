@@ -178,3 +178,13 @@ input[type="checkbox"]:checked::before {
 input[type="checkbox"]:checked::after {
   background-color: rgb(11, 11, 135);
 }
+
+/* ================================== */
+/* media queries */
+/* ================================== */
+
+@media (max-width: 700px) {
+  #container {
+    width: 95%;
+  }
+}
