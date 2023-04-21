@@ -44,6 +44,7 @@ const randomFunctions = {
 };
 
 // Selecting the DOM Elements
+const resultWindow = document.querySelector(`#resultContainer`);
 const resultEl = document.querySelector("#result");
 const clipboardEl = document.querySelector("#clipboard");
 const lowercaseEl = document.querySelector("#lowercase");
@@ -109,6 +110,7 @@ function generatePassword(lower, upper, number, symbol, length) {
 
   // 4. Add Generated password to the final password variable and return it from the function
   const finalPassword = generatedPassword.slice(0, length);
+
   console.log(finalPassword);
 
   return finalPassword;
@@ -139,15 +141,22 @@ generateEl.addEventListener("click", () => {
 clipboardEl.addEventListener("click", () => {
   // Access the password result
   const password = resultEl.innerText;
-
-  // If the user clicks the clipboard button while no password is displayed then an alert will be displayed to the user
   if (password === "") {
     alert("Please generate a password first");
     return;
   }
+  navigator.clipboard.writeText(password).then(() => {
+    clipboardEl.style.display = `none`;
+    const copied = document.createElement(`p`);
+    copied.setAttribute(`class`, `copied`);
+    copied.innerText = `Copied!`;
+    resultWindow.appendChild(copied);
 
-  // Referencing the 'navigator' object to copy the selected value to the clipboard on the device the webpage is being viewed on
-  navigator.clipboard.writeText(password);
+    setTimeout(() => {
+      clipboardEl.style.display = `block`;
+      resultWindow.removeChild(copied);
+    }, 3000);
+  });
 
-  alert("Copied to clipboard");
+  // alert("Copied to clipboard");
 });

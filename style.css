@@ -56,6 +56,8 @@ h2 {
 #result {
   font-family: var(--font-family);
   font-size: 20px;
+  font-weight: 700;
+  letter-spacing: 2px;
 }
 /* ===================================== */
 /* buttons */
@@ -88,8 +90,9 @@ button:active {
   border-radius: 10px;
   color: white;
   font-family: var(--font-family);
-  font-size: 20px;
+  font-size: 16px;
   filter: drop-shadow(0 0 5px blue);
+  text-transform: uppercase;
 }
 /* ============================== */
 /* range input */
@@ -187,4 +190,19 @@ input[type="checkbox"]:checked::after {
   #container {
     width: 95%;
   }
+}
+
+.copied {
+  font-size: 15px;
+  font-family: var(--font-family);
+  color: rgb(0, 255, 251);
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+.password {
+  font-family: var(--font-family);
+  color: rgb(0, 255, 251);
+  text-transform: uppercase;
+  font-weight: 700;
 }
