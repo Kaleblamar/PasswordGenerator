@@ -56,6 +56,7 @@ const generateEl = document.querySelector("#generate");
 let passwordRange;
 let lengthLabel = document.querySelector(`#lengthLabel`);
 let rangeOutput = document.querySelector(`#rangeOutput`);
+const copy = document.querySelector(`.copy`);
 
 // range event listener
 lengthEl.addEventListener(`input`, (e) => {
@@ -159,4 +160,10 @@ clipboardEl.addEventListener("click", () => {
   });
 
   // alert("Copied to clipboard");
+});
+clipboardEl.addEventListener(`mouseover`, () => {
+  copy.classList.add(`copyShow`);
+});
+clipboardEl.addEventListener(`mouseout`, () => {
+  copy.classList.remove(`copyShow`);
 });
