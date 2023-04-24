@@ -57,6 +57,11 @@ let passwordRange;
 let lengthLabel = document.querySelector(`#lengthLabel`);
 let rangeOutput = document.querySelector(`#rangeOutput`);
 const copy = document.querySelector(`.copy`);
+const alertCustom = document.querySelector(`.alert`);
+const alertCustom2 = document.querySelector(`.alert2`);
+const okay = document.querySelector(`.okay`);
+const okay2 = document.querySelector(`.okay2`);
+const container = document.querySelector(`#container`);
 
 // range event listener
 lengthEl.addEventListener(`input`, (e) => {
@@ -76,7 +81,21 @@ function generatePassword(lower, upper, number, symbol, length) {
 
   // if the user has NOT selected any of the four options then the alert will be displayed
   if (typesCount === 0) {
-    alert("Please Select at least one option");
+    // alert("Please Select at least one option");
+    alertCustom.classList.add(`showAlert`);
+    container.classList.add(`blur`);
+    okay.addEventListener(`click`, () => {
+      alertCustom.classList.add(`fadeOut`);
+      container.classList.remove(`blur`);
+      function timeOut() {
+        setTimeout(delay, 1000);
+      }
+      timeOut();
+      function delay() {
+        alertCustom.classList.remove(`showAlert`);
+        alertCustom.classList.remove(`fadeOut`);
+      }
+    });
     return "";
   }
 
@@ -143,7 +162,22 @@ clipboardEl.addEventListener("click", () => {
   // Access the password result
   const password = resultEl.innerText;
   if (password === "") {
-    alert("Please generate a password first");
+    // alert("Please generate a password first");
+
+    alertCustom2.classList.add(`showAlert`);
+    container.classList.add(`blur`);
+    okay2.addEventListener(`click`, () => {
+      alertCustom2.classList.add(`fadeOut`);
+      container.classList.remove(`blur`);
+      function timeOut() {
+        setTimeout(delay, 1000);
+      }
+      timeOut();
+      function delay() {
+        alertCustom2.classList.remove(`showAlert`);
+        alertCustom2.classList.remove(`fadeOut`);
+      }
+    });
     return;
   }
   navigator.clipboard.writeText(password).then(() => {
