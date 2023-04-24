@@ -79,9 +79,9 @@ button:active {
   color: white;
   position: relative;
 }
-/* #clipboard:hover + .copy {
+#clipboard:hover + .copy {
   opacity: 1;
-} */
+}
 #generate {
   width: calc(100% - 20px);
   padding: 20px;
@@ -99,6 +99,10 @@ button:active {
   font-weight: 700--help;
   filter: drop-shadow(0 0 5px blue);
   text-transform: uppercase;
+}
+
+#generate:hover + .passwordlength {
+  opacity: 1;
 }
 /* ============================== */
 /* range input */
@@ -131,6 +135,20 @@ button:active {
   color: red;
   font-weight: 700;
 }
+
+.passwordlength {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  color: red;
+  font-family: sans-serif;
+  font-size: 14px;
+  opacity: 0;
+  font-weight: 700;
+}
+#length:hover + .passwordlength {
+  opacity: 1;
+}
 /* ================================= */
 /* input settings */
 /* ================================= */
@@ -154,6 +172,9 @@ input[type="checkbox"]:hover {
   cursor: pointer;
 }
 
+input[type="checkbox"]:hover + .passwordlength {
+  opacity: 1;
+}
 input[type="checkbox"]::after {
   position: absolute;
   content: "";
