@@ -62,6 +62,7 @@ const alertCustom2 = document.querySelector(`.alert2`);
 const okay = document.querySelector(`.okay`);
 const okay2 = document.querySelector(`.okay2`);
 const container = document.querySelector(`#container`);
+const alertBox = document.querySelector(`.alertBox`);
 
 // range event listener
 lengthEl.addEventListener(`input`, (e) => {
@@ -82,7 +83,7 @@ function generatePassword(lower, upper, number, symbol, length) {
   // if the user has NOT selected any of the four options then the alert will be displayed
   if (typesCount === 0) {
     // alert("Please Select at least one option");
-    alertCustom.classList.add(`showAlert`);
+    alertBox.classList.add(`showAlert`);
     container.classList.add(`blur`);
     okay.addEventListener(`click`, () => {
       alertCustom.classList.add(`fadeOut`);
@@ -92,7 +93,7 @@ function generatePassword(lower, upper, number, symbol, length) {
       }
       timeOut();
       function delay() {
-        alertCustom.classList.remove(`showAlert`);
+        alertBox.classList.remove(`showAlert`);
         alertCustom.classList.remove(`fadeOut`);
       }
     });
@@ -164,7 +165,7 @@ clipboardEl.addEventListener("click", () => {
   if (password === "") {
     // alert("Please generate a password first");
 
-    alertCustom2.classList.add(`showAlert`);
+    alertBox.classList.add(`showAlert`);
     container.classList.add(`blur`);
     okay2.addEventListener(`click`, () => {
       alertCustom2.classList.add(`fadeOut`);
@@ -174,7 +175,7 @@ clipboardEl.addEventListener("click", () => {
       }
       timeOut();
       function delay() {
-        alertCustom2.classList.remove(`showAlert`);
+        alertBox.classList.remove(`showAlert`);
         alertCustom2.classList.remove(`fadeOut`);
       }
     });
